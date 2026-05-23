@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LinkedIn Personal Branding | Get Your Free Audit</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background-color: #ffffff;
+      color: #191c1e;
+      line-height: 1.6;
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 96px 40px 128px 40px;
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+
+    .hero-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .hero-left {
+      display: flex;
+      flex-direction: column;
+      gap: 22.8px;
+    }
+
+    /* Badge */
+    .badge {
+      display: inline-flex;
+      gap: 8px;
+      align-items: flex-end;
+      background-color: #cde5ff;
+      border-radius: 9999px;
+      padding: 3px 12px 4px 12px;
+      width: fit-content;
+    }
+
+    .badge-icon {
+      font-size: 14px;
+      line-height: 1;
+    }
+
+    .badge-text {
+      font-size: 12px;
+      font-weight: 600;
+      color: #004b74;
+      white-space: nowrap;
+    }
+
+    /* Heading */
+    .hero-heading {
+      font-size: 48px;
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -0.96px;
+      color: #191c1e;
+      margin-bottom: 0;
+    }
+
+    .hero-heading .invisible {
+      color: #005d8f;
+    }
+
+    .hero-heading .influential {
+      color: #0077b5;
+    }
+
+    /* Description */
+    .hero-description {
+      font-size: 18px;
+      color: #404850;
+      line-height: 1.6;
+      max-width: 576px;
+      margin-bottom: 0;
+    }
+
+    /* Subheading */
+    .hero-subheading {
+      font-size: 16px;
+      font-style: italic;
+      color: #707881;
+      line-height: 1.5;
+      margin-bottom: 0;
+    }
+
+    /* CTA Buttons */
+    .cta-buttons {
+      display: flex;
+      gap: 16px;
+      margin-top: 17.2px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 16.5px 32px;
+      font-size: 14px;
+      font-weight: 700;
+      border-radius: 12px;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      letter-spacing: 0.14px;
+      white-space: nowrap;
+      text-decoration: none;
+      display: inline-block;
+      text-align: center;
+    }
+
+    .btn-primary {
+      background-color: #0077b5;
+      color: #f3f7ff;
+      box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.05);
+    }
+
+    .btn-primary:hover {
+      background-color: #005a94;
+      transform: translateY(-2px);
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .btn-secondary {
+      background-color: #ffffff;
+      color: #191c1e;
+      border: 1px solid #bfc7d1;
+    }
+
+    .btn-secondary:hover {
+      background-color: #f5f5f5;
+      border-color: #0077b5;
+    }
+
+    /* Hero Right - Image */
+    .hero-right {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    .hero-image-container {
+      border: 1px solid #bfc7d1;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0px 25px 50px -12px rgba(0, 0, 0, 0.25);
+      margin-bottom: 24px;
+    }
+
+    .hero-image {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* Decorative Card */
+    .stats-card {
+      background: white;
+      border: 1px solid #bfc7d1;
+      border-radius: 16px;
+      padding: 25px;
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+      margin-left: -24px;
+      width: calc(100% + 48px);
+      box-shadow: 0px 20px 25px -5px rgba(0, 0, 0, 0.1), 0px 8px 10px -6px rgba(0, 0, 0, 0.1);
+    }
+
+    .stats-icon {
+      background-color: #cde5ff;
+      border-radius: 9999px;
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 24px;
+    }
+
+    .stats-content {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .stats-number {
+      font-size: 20px;
+      font-weight: 600;
+      color: #191c1e;
+      margin: 0;
+      line-height: 1.4;
+    }
+
+    .stats-label {
+      font-size: 12px;
+      font-weight: 600;
+      color: #707881;
+      line-height: 1.2;
+      margin: 0;
+    }
+
+    /* Form Section */
+    .form-section {
+      background-color: #f9fafb;
+      padding: 60px 40px;
+      margin-top: 80px;
+    }
+
+    .form-container {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .form-header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .form-header h2 {
+      font-size: 32px;
+      font-weight: 800;
+      color: #191c1e;
+      margin-bottom: 12px;
+    }
+
+    .form-header p {
+      font-size: 16px;
+      color: #707881;
+      line-height: 1.6;
+    }
+
+    .form-group {
+      margin-bottom: 24px;
+    }
+
+    .form-label {
+      display: block;
+      font-size: 14px;
+      font-weight: 600;
+      color: #191c1e;
+      margin-bottom: 8px;
+    }
+
+    .form-input {
+      width: 100%;
+      padding: 12px 16px;
+      font-size: 14px;
+      border: 1px solid #bfc7d1;
+      border-radius: 8px;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      transition: all 0.2s ease;
+    }
+
+    .form-input:focus {
+      outline: none;
+      border-color: #0077b5;
+      box-shadow: 0 0 0 3px rgba(0, 119, 181, 0.1);
+    }
+
+    .form-input::placeholder {
+      color: #bfc7d1;
+    }
+
+    .form-buttons {
+      display: flex;
+      gap: 12px;
+      margin-top: 32px;
+    }
+
+    .btn-submit {
+      flex: 1;
+      padding: 14px 32px;
+      background-color: #0077b5;
+      color: white;
+      font-weight: 700;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-size: 14px;
+    }
+
+    .btn-submit:hover {
+      background-color: #005a94;
+    }
+
+    .btn-submit:disabled {
+      background-color: #bfc7d1;
+      cursor: not-allowed;
+    }
+
+    /* Debug Box */
+    .debug-box {
+      background-color: #1f2937;
+      color: #10b981;
+      padding: 16px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      font-family: 'Courier New', monospace;
+      font-size: 12px;
+      max-height: 300px;
+      overflow-y: auto;
+      border: 2px solid #374151;
+    }
+
+    .debug-box p {
+      margin: 4px 0;
+      line-height: 1.4;
+    }
+
+    .debug-error {
+      color: #f87171;
+    }
+
+    .debug-success {
+      color: #10b981;
+    }
+
+    .debug-info {
+      color: #60a5fa;
+    }
+
+    /* Success Message */
+    .success-message {
+      display: none;
+      background-color: #d1fae5;
+      border: 1px solid #6ee7b7;
+      color: #065f46;
+      padding: 16px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      font-size: 14px;
+    }
+
+    .success-message.show {
+      display: block;
+    }
+
+    /* Error Message */
+    .error-message {
+      display: none;
+      background-color: #fee2e2;
+      border: 1px solid #fca5a5;
+      color: #7f1d1d;
+      padding: 16px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      font-size: 14px;
+    }
+
+    .error-message.show {
+      display: block;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero {
+        padding: 60px 20px 80px 20px;
+      }
+
+      .hero-container {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+
+      .hero-heading {
+        font-size: 32px;
+      }
+
+      .hero-description {
+        font-size: 16px;
+      }
+
+      .cta-buttons {
+        flex-direction: column;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .stats-card {
+        margin-left: 0;
+        width: 100%;
+      }
+
+      .form-section {
+        padding: 40px 20px;
+      }
+
+      .form-buttons {
+        flex-direction: column;
+      }
+
+      .form-header h2 {
+        font-size: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-container">
+      <!-- Left Column -->
+      <div class="hero-left">
+        <div class="badge">
+          <span class="badge-icon">🚀</span>
+          <span class="badge-text">Leading LinkedIn Personal Branding</span>
+        </div>
+
+        <h1 class="hero-heading">
+          Turn Your LinkedIn From
+          <span class="invisible">Invisible</span> to <span class="influential">Influential</span>
+        </h1>
+
+        <p class="hero-description">
+          We don't just "optimize profiles." We build your personal brand from scratch — with strategy, content, and consistency that actually gets you seen.
+        </p>
+
+        <p class="hero-subheading">
+          From 0 to hero on LinkedIn — without confusion, guesswork, or wasting months figuring it out alone.
+        </p>
+
+        <div class="cta-buttons">
+          <button class="btn btn-primary" onclick="document.querySelector('.form-section').scrollIntoView({ behavior: 'smooth' })">
+            Get Your Profile Audit
+          </button>
+          <button class="btn btn-secondary" onclick="alert('Start Growing Today - Feature coming soon!')">
+            Start Growing Today
+          </button>
+        </div>
+      </div>
+
+      <!-- Right Column -->
+      <div class="hero-right">
+        <div class="hero-image-container">
+          <img src="https://www.figma.com/api/mcp/asset/936d6439-fc8a-45f7-81e9-7d63745c085d" alt="Professional workspace with LinkedIn profile" class="hero-image">
+        </div>
+
+        <div class="stats-card">
+          <div class="stats-icon">📈</div>
+          <div class="stats-content">
+            <p class="stats-number">+340%</p>
+            <p class="stats-label">Avg. Profile Visibility</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Form Section -->
+  <section class="form-section">
+    <div class="form-container">
+      <div class="form-header">
+        <h2>Get Your Free LinkedIn Audit</h2>
+        <p>Fill in your details below and we'll analyze your profile for free. Pay just ₹1 to unlock your personalized audit report.</p>
+      </div>
+
+      <div class="debug-box" id="debugBox">
+        <p class="debug-info">🔍 Debug Console - Watch for errors below:</p>
+      </div>
+
+      <div class="success-message" id="successMessage">
+        ✓ Form submitted successfully! Check Google Sheets.
+      </div>
+
+      <div class="error-message" id="errorMessage">
+        Error submitting form. See debug box above.
+      </div>
+
+      <form id="auditForm">
+        <div class="form-group">
+          <label class="form-label" for="name">Full Name *</label>
+          <input type="text" id="name" name="name" class="form-input" placeholder="Enter your full name" required>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="email">Email Address *</label>
+          <input type="email" id="email" name="email" class="form-input" placeholder="Enter your email" required>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="phone">Phone Number *</label>
+          <input type="tel" id="phone" name="phone" class="form-input" placeholder="Enter your phone number" required>
+        </div>
+
+        <button type="submit" class="btn-submit" id="submitBtn">
+          Submit & Check Sheets
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <script>
+    const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxPVBi2RLEiv2OBSXS_jekfQ_qt1EdPrCcWBMz7HOpSM6wyWIPBmnr22KSAShW6tTbG/exec';
+    const debugBox = document.getElementById('debugBox');
+
+    // Logging function
+    function log(message, type = 'info') {
+      const p = document.createElement('p');
+      p.className = `debug-${type}`;
+      p.textContent = `[${new Date().toLocaleTimeString()}] ${message}`;
+      debugBox.appendChild(p);
+      debugBox.scrollTop = debugBox.scrollHeight;
+      console.log(`[${type.toUpperCase()}] ${message}`);
+    }
+
+    log('Page loaded. Script URL configured.', 'info');
+
+    const form = document.getElementById('auditForm');
+    const submitBtn = document.getElementById('submitBtn');
+    const successMessage = document.getElementById('successMessage');
+    const errorMessage = document.getElementById('errorMessage');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      log('Form submit triggered', 'info');
+
+      // Get form values
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+
+      log(`Name: "${name}" | Email: "${email}" | Phone: "${phone}"`, 'info');
+
+      // Validate
+      if (!name || !email || !phone) {
+        log('Validation failed: Missing fields', 'error');
+        errorMessage.textContent = '✗ Please fill in all fields';
+        errorMessage.classList.add('show');
+        return;
+      }
+
+      // Show loading state
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Submitting...';
+
+      // Build URL with query parameters
+      const params = new URLSearchParams({
+        name: name,
+        email: email,
+        phone: phone
+      });
+
+      const url = SCRIPT_URL + '?' + params.toString();
+      log(`Built URL: ${url}`, 'info');
+
+      // Send data using GET with no-cors
+      log('Sending fetch request...', 'info');
+      
+      fetch(url, {
+        method: 'GET',
+        mode: 'no-cors'
+      })
+      .then(response => {
+        log(`Response received. Status: ${response.status}, Type: ${response.type}`, 'success');
+        // Don't try to parse the response - just assume it worked
+        showSuccess();
+        form.reset();
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Submit & Check Sheets';
+        
+        log('Opening Cashfree payment page...', 'info');
+        setTimeout(() => {
+          window.open('https://payments.cashfree.com/forms/getaudit', '_blank');
+        }, 1500);
+      })
+      .catch(error => {
+        log(`Fetch error: ${error.message}`, 'error');
+        log(`Full error: ${JSON.stringify(error)}`, 'error');
+        errorMessage.textContent = `✗ Error: ${error.message}`;
+        errorMessage.classList.add('show');
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Submit & Check Sheets';
+      });
+    });
+
+    function showSuccess() {
+      log('Success callback triggered', 'success');
+      successMessage.classList.add('show');
+      errorMessage.classList.remove('show');
+      setTimeout(() => {
+        successMessage.classList.remove('show');
+      }, 5000);
+    }
+  </script>
+</body>
+</html>
